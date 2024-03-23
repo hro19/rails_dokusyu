@@ -1,6 +1,7 @@
 <%= form_with(model: book) do |form| %>
+<div class="mx-4">
   <% if book.errors.any? %>
-    <div style="color: red">
+    <div class="text-red-500">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
@@ -11,17 +12,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-4">
+    <%= form.label :title, class: "block" %>
+    <%= form.text_field :title, class: "border rounded-md p-2" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :description, class: "block" %>
+    <%= form.text_area :description, class: "border rounded-md p-2" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.submit class: "bg-blue-500 text-white px-4 py-2 rounded-md" %>
   </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

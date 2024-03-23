@@ -26,7 +26,7 @@
           <td><%= book.title %></td>
           <td><%= book.description %></td>
           <td><%= book.id %></td>
-          <td><%= link_to "Show", book, class: 'inline-block bg-green-500 text-white px-4 py-2 rounded' %></td>
+          <td><%= link_to "Show", book_path(book), class: 'inline-block bg-green-500 text-white px-4 py-2 rounded hover:opacity-80' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -36,5 +36,5 @@
 <hr class="my-3" />
 
 <div class="mx-2 my-3">
-<%= link_to 'New book', new_book_path, class: 'inline-block bg-blue-500 text-white px-4 py-2 rounded' %>
+  <%= link_to 'New book', new_book_path, class: 'inline-block bg-blue-500 text-white px-4 py-2 rounded hover:opacity-80' %>
 </div>
