@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = Book.all
+    @genres = ["技術書", "小説", "ビジネス書","自己啓発","絵本"];
   end
 
   # GET /books/1 or /books/1.json

@@ -2,6 +2,14 @@
 
 <h1 class="text-4xl font-bold mb-8">Books</h1>
 
+<div>
+  <ul class="flex gap-4 border-b-2">
+    <% @genres.each do |genre| %>
+      <li class="text-blue-500"><%= genre %></li>
+    <% end %>
+  </ul>
+</div>
+
 <div id="books">
   <table>
     <thead>
