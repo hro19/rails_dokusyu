@@ -25,6 +25,7 @@ class BooksController < ApplicationController
     end
 
     @posts = fetch_posts
+    @date = Time.now
   end
 
   # GET /books/1 or /books/1.json
