@@ -3,6 +3,7 @@
   <head>
     <title>RailsDokusyu</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,17 @@
   </head>
 
   <body>
+  <header>
+    <nav class="bg-gray-800">
+      <div class="container mx-auto flex items-center p-4">
+        <a href="/" class="text-white
+          text-2xl font-bold mr-8">RailsDokusyu</a>  
+        <ul class="flex gap-5">
+          <li><a href="/books" class="text-white">書籍一覧</a></li>
+          <li><a href="/books/new" class="text-white">追加</a></li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

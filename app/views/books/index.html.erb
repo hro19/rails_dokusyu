@@ -1,14 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Books</h1>
+<h1 class="text-4xl font-bold mb-8">Books</h1>
 
 <div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.description %></td>
+          <td><%= book.id %></td>
+          <td><%= link_to "Show", book, class: 'inline-block bg-green-500 text-white px-4 py-2 rounded' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<hr class="my-3" />
+
+<div class="mx-2 my-3">
+<%= link_to 'New book', new_book_path, class: 'inline-block bg-blue-500 text-white px-4 py-2 rounded' %>
+</div>
