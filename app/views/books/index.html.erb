@@ -33,8 +33,12 @@
   </table>
 </div>
 
-<hr class="my-3" />
-
-<div class="mx-2 my-3">
-  <%= link_to 'New book', new_book_path, class: 'inline-block bg-blue-500 text-white px-4 py-2 rounded hover:opacity-80' %>
+<hr />
+<div>
+  <% @posts.each do |post| %>
+    <div id=<%= post['id'] %>>
+      <h2>【ID:<%= post['id'] %>】<%= post['title'] %></h2>
+      <p><%= post['body'] %></p>
+    </div>
+  <% end %>
 </div>

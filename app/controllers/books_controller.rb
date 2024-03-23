@@ -5,6 +5,26 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @genres = ["技術書", "小説", "ビジネス書","自己啓発","絵本"];
+    require 'net/http'
+    require 'json'
+
+    def fetch_posts
+      url = URI.parse('https://jsonplaceholder.typicode.com/posts')
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true
+
+      request = Net::HTTP::Get.new(url.request_uri)
+      response = http.request(request)
+
+      if response.code == '200'
+        posts = JSON.parse(response.body)
+        return posts
+      else
+        return []
+      end
+    end
+
+    @posts = fetch_posts
   end
 
   # GET /books/1 or /books/1.json
